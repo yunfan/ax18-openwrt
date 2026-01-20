@@ -18,7 +18,7 @@ permissions:
   actions: write
 
 env:
-  REPO_URL: https://github.com/Kurosaki-Senpai/IPQ6000-WIFI-USB3.git
+  REPO_URL: https://github.com/yunfan/IPQ6000-WIFI-USB3.git
   REPO_BRANCH: wifi
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: ./config/zn-m2.config
