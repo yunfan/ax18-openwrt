@@ -47,6 +47,7 @@ jobs:
         DEBIAN_FRONTEND: noninteractive
       run: |
         apt-get -y update
+        apt install -y tzdata curl
         
     - name: 签出代码
       uses: actions/checkout@v3.1.0
