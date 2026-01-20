@@ -32,31 +32,26 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu:20.04
-
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:20.04
+      volumes:
+        - /data:/data
     steps:
-    
+    - name: 探测环境
+      run: |
+        pwd
+        
     - name: 更新软件索引
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
         sudo apt-get -y update
         
-    - name: Free Disk Space
-      uses: jlumbroso/free-disk-space@main
-      with:
-        tool-cache: true
-        android: true
-        dotnet: true
-        haskell: true
-        large-packages: true
-        docker-images: true
-        swap-storage: true
-
-    - name: Checkout
+    - name: 签出代码
       uses: actions/checkout@v3.1.0
 
-    - name: Initialization environment
+    - name: 初始化环境
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
@@ -69,7 +64,7 @@ jobs:
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
 
-    - name: Clone source code
+    - name: 克隆目标代码
       working-directory: /workdir
       run: |
         df -hT $PWD
