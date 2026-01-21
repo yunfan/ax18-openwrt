@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: 原始build fix构建环境问题
+name: 换源
 
 on:
   repository_dispatch:
@@ -18,8 +18,8 @@ permissions:
   actions: write
 
 env:
-  REPO_URL: https://github.com/yunfan/IPQ6000-WIFI-USB3.git
-  REPO_BRANCH: wifi
+  REPO_URL: https://github.com/AnClark/openwrt-gl-ax1800.git
+  REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: ./config/zn-m2.config
   DIY_P1_SH: ./scripts/zn-m2/diy-part1.sh
