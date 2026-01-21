@@ -37,12 +37,14 @@ jobs:
       image: ubuntu:20.04
       env:
         TZ: Asia/Shanghai
+        FORCE_UNSAFE_CONFIGURE: 1
       volumes:
         - /data:/data
     steps:
     - name: 探测环境
       run: |
         pwd
+        id
         
     - name: 更新软件索引
       env:
